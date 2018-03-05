@@ -23,8 +23,8 @@ class Game extends Component{
     this.state = {
       width: 100,
       dir: true, 
-      ind: 7,
-      length: 10,
+      ind: 1,
+      length: 20,
       game: [],
     }
     this.timeInterval = setInterval(this.update.bind(this), 50);
@@ -56,7 +56,7 @@ class Game extends Component{
 
   update(){
     if(this.state.length==0){ //game over
-      this.setState({ind:Math.round(Math.random()*80)+10,length:10,game:[]});
+      this.setState({ind:Math.round(Math.random()*80),length:20,game:[]});
       clearInterval(this.timeInterval);
       this.timeInterval = setInterval(this.update.bind(this),50);
     }
