@@ -36,7 +36,7 @@ class Game extends Component{
     setTimeout(this.update.bind(this),this.state.delay);
   }
 
-  dropRow(){
+  dropRow = () => {
     var game = this.state.game.slice();
     var crow=Array(this.state.width).fill(0);
     for(var i = 0;i<this.state.length;i++){
@@ -65,9 +65,13 @@ class Game extends Component{
     this.setState({game:game,dir:dir,length:this.state.length - miss,ind:ind});
     this.setState({delay:this.state.delay-1});
   }
+  componentDidMount(){
+    window.onkeydown = this.dropRow;
+  }
 
   update(){
     if(this.state.length==0){ //game over
+      
       this.setState({ind:1+Math.round(Math.random()*5),length:4,game:[],delay:50});
     }
     var next;
@@ -97,7 +101,6 @@ class Game extends Component{
     
     return (
       <div className="grid">
-        <KeyHandler keyEventName={KEYPRESS} keyValue="ArrowDown" onKeyHandle={this.dropRow.bind(this)} /> 
         {rend}
       </div>
     );
