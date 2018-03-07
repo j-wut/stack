@@ -120,7 +120,7 @@ class App extends Component {
           <h1 className="App-title">Stacker Game ReactJS</h1>
         </header>
         <p className="App-intro">
-          Press Down to drop a row.  Source in App.js
+          Source in App.js
         </p>
         <Game/>
       </div>
