@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import KeyHandler, {KEYPRESS} from 'react-key-handler';
 import black from './black.png';
 import white from './white.png';
 import logo from './logo.svg';
